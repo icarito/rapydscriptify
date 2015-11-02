@@ -18,6 +18,6 @@
   },
   "devDependencies": {
     "browserify": "12.0.1",
-    "lispyscript": "git+https://github.com/tehshrike/lispyscript.git#expose-sourcemap"
+    "lispyscript": "git+https://github.com/santoshrajan/lispyscript.git#f4a3bd4076"
   }
 }

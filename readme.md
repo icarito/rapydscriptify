@@ -1,10 +1,10 @@
 Require [Lispyscript](http://lispyscript.com/) code in your [browserify](https://github.com/substack/node-browserify)-built webapp!
 
-## CURRENTLY WAITING FOR THIS PULL REQUEST TO BE MERGED
+## Depends on a version of Lispyscript not yet on npm
 
-This code will not *officially* work until [pull request 61](https://github.com/santoshrajan/lispyscript/pull/61) is merged into the Lispyscript codebase.
+This transform will work with versions of Lispyscript after [this commit](https://github.com/santoshrajan/lispyscript/commit/f4a3bd407613d29f0b7488495d9b7214d1ecee1f) to the Lispyscript repository.
 
-Until then, you can add `"lispyscript": "git+https://github.com/tehshrike/lispyscript.git#expose-sourcemap"` to `dependencies` in your `package.json` if you want to use this.
+Until the Lispyscript package on npm is updated, you'll have to depend on the version in the repository, something like this: `"lispyscript": "git+https://github.com/santoshrajan/lispyscript.git#f4a3bd4076"`
 
 ## To use
 
