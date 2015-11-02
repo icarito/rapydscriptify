@@ -21,8 +21,17 @@ module.exports = function(file, opts) {
 				cb(e)
 				return
 			}
-			console.log('source mapping:', output.map.toString())
-			this.push(output.code + convert.fromJSON(output.map.toString()).toComment())
+
+			var sourceNodeGenerator = output.map
+
+			sourceNodeGenerator.setSourceContent(file, data)
+
+			var map = convert.fromJSON(sourceNodeGenerator.toString())
+
+			map.setProperty('sources', [file])
+			map.setProperty('file', file)
+
+			this.push(output.code + '\n' + map.toComment() + '\n')
 			cb()
 		})
 
@@ -31,5 +40,3 @@ module.exports = function(file, opts) {
 		return through()
 	}
 }
-
-module.exports.sourceMap = true

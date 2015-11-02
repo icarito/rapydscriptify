@@ -1,7 +1,7 @@
 {
   "name": "lispyscriptify",
   "version": "1.0.0",
-  "description": "Browserify transform for Lispyscript",
+  "description": "Lispyscript transform for Browserify",
   "main": "index.js",
   "scripts": {
     "test": "rm -f test-output.js && browserify -t ./index.js -d test.js -o test-output.js"
