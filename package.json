@@ -1,0 +1,23 @@
+{
+  "name": "lispyscriptify",
+  "version": "1.0.0",
+  "description": "Browserify transform for Lispyscript",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -f test-output.js && browserify -t ./index.js -d test.js -o test-output.js"
+  },
+  "keywords": [
+    "browserify",
+    "lispyscript"
+  ],
+  "author": "TehShrike",
+  "license": "WTFPL",
+  "dependencies": {
+    "convert-source-map": "1.1.1",
+    "through2": "2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "12.0.1",
+    "lispyscript": "git+https://github.com/tehshrike/lispyscript.git#expose-sourcemap"
+  }
+}
