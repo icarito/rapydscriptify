@@ -1,1 +1,1 @@
-require('./test.ls')
+require('./test.pyj')

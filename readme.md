@@ -1,17 +1,21 @@
-Require [Lispyscript](http://lispyscript.com/) code in your [browserify](https://github.com/substack/node-browserify)-built webapp!
+Require [RapydScript](http://rapydscript.com/) code in your [browserify](https://github.com/substack/node-browserify)-built webapp!
 
 ## To use
 
-Include `lispyscriptify` in your browserify-using package:
+Include `rapydscriptify` in your browserify-using package:
 
 ```sh
-npm install lispyscriptify --save-dev
+npm install rapydscriptify --save-dev
 ```
 
-Change your build to use the lispyscriptify transform:
+Change your build to use the rapydscriptify transform:
 
 ```sh
-browserify -t lispyscriptify start.js -o coolbuild.js
+browserify -t rapydscriptify start.js -o coolbuild.js
 ```
 
-All files with the extension `.ls` will be interpreted as Lispyscript files.
+All files with the extension `.pyj` or `.py` will be interpreted as RapydScript files.
+
+## Lineage
+
+This script is modified from [lispyscriptify](https://github.com/TehShrike/lispyscriptify) which, naturally, is the Lispyscript transform for Browserify.

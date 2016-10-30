@@ -1,13 +1,12 @@
 var through = require('through2')
-var parseLispyscript = require('lispyscript').parseWithSourceMap
-var convert = require('convert-source-map')
+var rapydscript = require('rapydscript')
 
-function isLispyscript(file) {
-	return /\.ls$/.test(file)
+function isRapydscript(file) {
+	return /\.pyj?$/.test(file)
 }
 
 module.exports = function(file, opts) {
-	if (isLispyscript(file)) {
+	if (isRapydscript(file)) {
 		var data = ''
 
 		var stream = through(function write(chunk, enc, cb) {
@@ -15,23 +14,14 @@ module.exports = function(file, opts) {
 			cb()
 		}, function end(cb) {
 			try {
-				var output = parseLispyscript(data, file)
+				var output = rapydscript.compile(data, { omit_baselib:true } )
 			} catch (e) {
 				console.error(e.message)
 				cb(e)
 				return
 			}
 
-			var sourceNodeGenerator = output.map
-
-			sourceNodeGenerator.setSourceContent(file, data)
-
-			var map = convert.fromJSON(sourceNodeGenerator.toString())
-
-			map.setProperty('sources', [file])
-			map.setProperty('file', file)
-
-			this.push(output.code + '\n' + map.toComment() + '\n')
+			this.push(output)
 			cb()
 		})
 
