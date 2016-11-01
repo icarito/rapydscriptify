@@ -1,5 +1,6 @@
 var through = require('through2')
 var rapydscript = require('rapydscript')
+var fs = require('fs')
 
 function isRapydscript(file) {
 	return /\.pyj?$/.test(file)
@@ -14,7 +15,15 @@ module.exports = function(file, opts) {
 			cb()
 		}, function end(cb) {
 			try {
-				var output = rapydscript.compile(data, { omit_baselib:true } )
+				var output = rapydscript.compile(data, { filename:file,
+                                                                         toplevel: null,
+                                                                         base_dir: '.',
+                                                                         auto_bind: true,
+                                                                         libdir: 'src/lib',
+                                                                         readfile:fs.readFileSync,
+                                                                         omit_baselib:false,
+                                                                         private_scope:false,
+                                                                         beautify:true } )
 			} catch (e) {
 				console.error(e.message)
 				cb(e)

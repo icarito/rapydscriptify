@@ -1,6 +1,6 @@
 {
   "name": "rapydscriptify",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Rapydscript transform for Browserify",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "through2": "2.0.0",
-    "rapydscript": "https://github.com/icarito/RapydScript"
-  },
-  "devDependencies": {
+    "rapydscript": "https://github.com/atsepkov/RapydScript",
     "browserify": "12.0.1"
   }
 }
