@@ -1,5 +1,5 @@
 {
-  "name": "Rapydscriptify",
+  "name": "rapydscriptify",
   "version": "0.2.0",
   "description": "Rapydscript transform for Browserify",
   "main": "index.js",
