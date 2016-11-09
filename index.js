@@ -21,7 +21,7 @@ module.exports = function(file, opts) {
                                                                          base_dir: ".",
                                                                          import_dirs: [path.dirname(file)],
                                                                          auto_bind: true,
-                                                                         libdir: 'src/lib',
+                                                                         libdir: 'node_modules/rapydscript/src/lib',
                                                                          readfile:fs.readFileSync,
                                                                          omit_baselib:false,
                                                                          private_scope:false,
